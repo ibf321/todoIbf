@@ -2,26 +2,29 @@ import { useState } from "react";
 import Todo from "./components/todo";
 import TodoForm from "./components/TodoForm";
 import Search from "./components/Search";
-import "./App.css";
 import Filter from "./components/Filter";
+import "./App.css";
 
 function App() {
   const [todos, setTodos] = useState([
     {
       id: 1,
       text: "Criar Funcionalidade x no sistema",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       category: "Trabalho",
       isCompleted: false,
     },
     {
       id: 2,
       text: "Ir para academmia",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       category: "Pessoal",
       isCompleted: false,
     },
     {
       id: 3,
       text: "Estudar React",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       category: "Estudos",
       isCompleted: false,
     },
@@ -30,13 +33,14 @@ function App() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("All");
   const [sort, setSort] = useState("Asc");
-  const addTodo = (text, category) => {
+  const addTodo = (text, category, description) => {
     const newTodos = [
       ...todos,
       {
         id: Math.floor(Math.random() * 10000),
         text,
         category,
+        description,
         isCompleted: false,
       },
     ];

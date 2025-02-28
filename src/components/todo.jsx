@@ -8,6 +8,7 @@ const todo = ({ todo, removeTodo, completeTodo }) => {
     >
       <div className="content">
         <p>{todo.text}</p>
+        <p className="description">{todo.description}</p>
         <p className="category">({todo.category})</p>
       </div>
       <div>
